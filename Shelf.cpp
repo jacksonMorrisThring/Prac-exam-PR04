@@ -33,15 +33,15 @@ Music_box* Shelf::get_contents(){
 }
 
 bool Shelf::add_music_box(Music_box box){
-    cout << "width remaining: " << widthRemaining << endl;
-    // if(widthRemaining == 0){
-    //     return false;
-    // }
+    // cout << "width remaining: " << widthRemaining << endl;
+    if(widthRemaining == 0){
+        return false;
+    }
     if(widthRemaining >= box.get_width()){
         widthRemaining = widthRemaining - box.get_width();
         boxCounter++;
         shelfArray[boxCounter] = box;
-        cout << "width remaining is now: " << widthRemaining << endl;
+        // cout << "width remaining is now: " << widthRemaining << endl;
         return true;
     }
     return false;
