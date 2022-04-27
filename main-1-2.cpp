@@ -40,7 +40,8 @@ int main(){
     cout << "shelf has " << shelf2.get_number_of_music_boxes() << " boxes on it" <<endl;
 
 
-
+     cout << "result of attemting to add box to empty shelf is... "<<endl<< shelf1.add_music_box(cBox) << endl;
+    cout << "shelf has " << shelf1.get_number_of_music_boxes() << " boxes on it" <<endl;
 
 
 
