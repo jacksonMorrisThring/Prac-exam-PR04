@@ -6,6 +6,7 @@ Shelf::Shelf(){
     width = 0;
     shelfArray = new Music_box[width];
     boxCounter = 0;
+    widthRemaining = width;
 
     cout << "created shelf with default constructor" << endl;
 }
@@ -14,8 +15,9 @@ Shelf::Shelf(int width){
     this->width = width;
     shelfArray = new Music_box[width];
     boxCounter = 0;
+    widthRemaining = width;
 
-    cout << "created shelf with width specific constructor" << endl;
+    // cout << "created shelf with width specific constructor" << endl;
 }
 
 int Shelf::get_width(){
@@ -31,16 +33,18 @@ Music_box* Shelf::get_contents(){
 }
 
 bool Shelf::add_music_box(Music_box box){
-    if(widthRemaining > box.get_width()){
+    // cout << "width remaining: " << widthRemaining << endl;
+    if(widthRemaining >= box.get_width()){
         widthRemaining = widthRemaining - box.get_width();
         boxCounter++;
         shelfArray[boxCounter] = box;
+        // cout << "width remaining is now: " << widthRemaining << endl;
         return true;
     }
     return false;
 }
 
 Shelf::~Shelf(){
-    cout << "destroying shelf with width " << this-> width<< endl;
+    // cout << "destroying shelf with width " << this-> width<< endl;
     delete[] shelfArray;
 }
