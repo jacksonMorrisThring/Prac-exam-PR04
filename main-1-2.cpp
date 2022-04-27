@@ -14,8 +14,9 @@ int main(){
 
     cout << "the music box has song " << bBox.get_song() << " and has width " << bBox.get_width() << endl;
 
+    Shelf shelf1;
+    Shelf shelf2(150);
 
-    Shelf shelf2(15);
 
 
     cout << "width of shelf is " << shelf2.get_width() << endl;
@@ -27,6 +28,15 @@ int main(){
     cout << "result of attemting to dd to shelf is... "<<endl<< shelf2.add_music_box(aBox) << endl;
     cout << "shelf has " << shelf2.get_number_of_music_boxes() << " boxes on it" <<endl;
     cout << "result of attemting to add another box to shelf is... "<<endl<< shelf2.add_music_box(bBox) << endl;
+    cout << "shelf has " << shelf2.get_number_of_music_boxes() << " boxes on it" <<endl;
+
+    Music_box cBox;
+    Music_box dBox("American pie", 121);
+
+    cout << "result of attemting to add another box to shelf is... "<<endl<< shelf2.add_music_box(cBox) << endl;
+    cout << "shelf has " << shelf2.get_number_of_music_boxes() << " boxes on it" <<endl;
+
+    cout << "ADDING FINAL BOX "<<endl<< shelf2.add_music_box(dBox) << endl;
     cout << "shelf has " << shelf2.get_number_of_music_boxes() << " boxes on it" <<endl;
 
 
